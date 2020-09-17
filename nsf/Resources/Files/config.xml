@@ -3,6 +3,12 @@
 	<menu>
 		<item name="Logs" id="logs" page="Reader.xsp">
 			<action type="link" url="Reader.xsp?tab=logs" />
+			<item name="Error files" restricted="true">
+				<action type="filereader" filetype="xml">
+					<filename>[data]\domino\workspace\logs\error-log-*.xml</filename>
+					<transform>transform.xsl</transform>
+				</action>
+			</item>
 			<item name="Console" restricted="true">
 				<action type="filereader" filetype="text">
 					<filename>[data]\IBM_TECHNICAL_SUPPORT\console*.log</filename>
@@ -47,12 +53,6 @@
 				<action type="filereader" filetype="xml">
 					<filename>[data]\domino\workspace\logs\trace-log-*.xml</filename>
 					<transform>Trace_Viewer.xml</transform>
-				</action>
-			</item>
-			<item name="Error files" restricted="true">
-				<action type="filereader" filetype="xml">
-					<filename>[data]\domino\workspace\logs\error-log-*.xml</filename>
-					<transform>transform.xsl</transform>
 				</action>
 			</item>
 		</item>
